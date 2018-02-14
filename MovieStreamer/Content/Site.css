@@ -1,0 +1,99 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.dropdown.main-menu-dropdown {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20px 0px;
+    line-height: 20px;
+    position: relative;
+   
+}
+
+.dropdown.main-menu-dropdown:hover,
+.dropdown.main-menu-dropdown:focus{
+    background: #222 none repeat scroll 0% 0%;
+    text-decoration: none;
+}
+
+.navbar-ex2-collapse {
+    max-height: 600px;
+}
+
+.transition .dropdown-menu{
+    opacity: 0;
+        -moz-transition:    all 1000ms ease;
+    -webkit-transition: all 1000ms ease;
+    -o-transition:      all 1000ms ease;
+    -ms-transition:     all 1000ms ease;
+    transition:         all 1000ms ease;
+}
+.transition:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+}
+
+.navbar-button-right {
+    float: right !important;
+}
+
+.movie-thumbnail{
+    width: 60px;
+    height:auto;  
+}
+
+.movie-suggestions{
+    z-index: 9999;
+    margin-top: 42px;
+}
+
+.tt-menu{
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 0;
+    width: 100% !important;
+}
+
+.suggestion-item{
+    margin-bottom: 10px;
+}
+
+.suggestion-item:last-child{
+    margin-bottom: 0px;
+}
+
+.twitter-typeahead, .tt-hint, .tt-input, .tt-menu { 
+    width: 100%; 
+}
+
+input{
+    max-width: none !important;
+}
+
+.suggestion-item strong {
+    margin-left: 10px;
+}
+

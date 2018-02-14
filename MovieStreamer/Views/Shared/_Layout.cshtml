@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")  
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/responsive.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="~/Scripts/search.js"></script>
+</head>
+<body>
+        <div class="navbar navbar-fixed-top header-area">
+            <div class="container">
+                <div class="navbar-header navbar-default" role="navigation">
+                    <button type="button" class="navbar-toggle navbar-button-right" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("MovieShop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="@Url.Action("Index", "Home")">
+                                <i class="glyphicon glyphicon-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("About", "Home")">
+                                <i class="glyphicon glyphicon-bullhorn"></i>
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Contact", "Home")">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="logo">
+                        <h1>@Html.ActionLink("MovieShop", "Index", "Home")</h1>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group movie-suggestions">
+                        <input type="text" class="form-control" placeholder="Search for..." id="movie-search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="shopping-item">
+                        <a href="cart.html">Balance - <span class="cart-amunt">$0</span> <i class="fa fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="undefined-sticky-wrapper" class="sticky-wrapper navbar" style="height: 60px;">
+        <div class="mainmenu-area navbar-default">
+            <div class="container">
+                <div class="row">
+                    <button type="button" class="navbar-toggle navbar-button-right" data-toggle="collapse" data-target=".navbar-ex2-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-collapse collapse navbar-ex2-collapse" style="height: 1px;">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="@Url.Action("Index", "Home")">
+                                    <i class="glyphicon glyphicon-home"></i> Home
+                                </a>
+                            </li>
+                            <li class="dropdown transition">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Movies <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="cart.html">Series</a></li>
+                            <li><a href="checkout.html">Bestsellers</a></li>
+                            <li><a href="#">Must Watch</a></li>
+                            <li><a href="#">IMDb top 250</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <div class="footer-top-area">
+            <div class="zigzag-bottom"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-about-us">
+                            <h2><span>MovieShop</span></h2>
+                            <p></p>
+                            <div class="footer-social">
+                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-menu">
+                            <h2 class="footer-wid-title">User Navigation </h2>
+                            <ul>
+                                <li><a href="#">My account</a></li>
+                                <li><a href="#">History</a></li>
+                                <li><a href="#">Wishlist</a></li>
+                                <li><a href="#">Vendor contact</a></li>
+                                <li><a href="#">Front page</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-menu">
+                            <h2 class="footer-wid-title">Categories</h2>
+                            <ul>
+                                <li><a href="#">Movies</a></li>
+                                <li><a href="#">Series</a></li>
+                                <li><a href="#">TV shows</a></li>
+                                <li><a href="#">IMDb top 250</a></li>
+                                <li><a href="#">Bestsellers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-newsletter">
+                            <h2 class="footer-wid-title">Newsletter</h2>
+                            <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+                            <div class="newsletter-form">
+                                <form action="#">
+                                    <input type="email" placeholder="Type your email">
+                                    <input type="submit" value="Subscribe">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

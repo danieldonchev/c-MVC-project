@@ -1,0 +1,10 @@
+﻿@model MovieStreamer.Models.MovieViewModel
+
+@{
+    ViewBag.Title = "PlayMovie";
+}
+
+
+<video width="800" height="600" controls="controls" autoplay="autoplay">
+    <source src="@(Model.MoviePath + ".mp4")" type="video/mp4" />
+</video>

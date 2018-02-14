@@ -1,0 +1,99 @@
+﻿@model MovieStreamer.Models.MovieViewModel
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<body>
+    <div class="row">
+        <div class="col-sm-4">
+            @if (!string.IsNullOrEmpty(Model.Poster))
+            {
+                <img src="@(Model.Poster)" />
+            }
+        </div>
+        <div class="col-sm-8">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(x => x.Title) :
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.Title)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(x => x.Genre) :
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.Genre)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(x => x.Actors) :
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.Actors)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(x => x.Director) :
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.Director)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(x => x.Writer) :
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.Writer)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(x => x.Released) :
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.Released)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(x => x.Runtime) :
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.Runtime)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(x => x.Rated) :
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.Rated)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(x => x.imdbRating) :
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.imdbRating)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(x => x.Awards) :
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.Awards)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(x => x.Plot) :
+                </dt>
+                <dd>
+                    @Html.DisplayFor(x => x.Plot)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(x => x.AvailableToWatch) :
+                </dt>
+                <dd>
+                    @if (Model.AvailableToWatch == true)
+                    {
+                        <a href="/Movies/PlayMovie/@Model.imdbID"> Play Movie</a>
+                    }
+                    @if(!Request.IsAuthenticated)
+                    {
+                        @Html.ActionLink("Register", "Register","Account") <text> or </text>
+                        @Html.ActionLink("Login", "Login", "Account")<text> to view the movie </text>
+                    }
+                </dd>
+            </dl>
+        </div>
+    </div>
+</body>
