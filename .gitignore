@@ -1,1 +1,5 @@
 .vs/
+*.suo
+
+packages/**/*
+!packages/repositories.config
